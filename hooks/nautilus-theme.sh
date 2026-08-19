@@ -2,12 +2,10 @@
 
 # Nautilus-specific dark styling so folders and files stay visible, with a
 # distinct accent-tinted look that stands out from the plain dark GTK theme.
-
-# omarchy-hook runs .d hooks twice: once from the main hook (with colors) and
-# once without. Skip the second pass so we never append an empty block.
-if [[ -z "$primary_background" ]]; then
-    exit 0
-fi
+#
+# The CSS only references symbolic colors (@view_bg_color, @accent_bg_color,
+# ...) defined in the same gtk.css file by the 10-gtk.sh hook, so it does not
+# depend on color values being passed as environment variables.
 
 gtk3_file="$HOME/.config/gtk-3.0/gtk.css"
 gtk4_file="$HOME/.config/gtk-4.0/gtk.css"
@@ -18,8 +16,7 @@ flatpak_nautilus_dir="$HOME/.var/app/org.gnome.Nautilus/config"
 
 nautilus_css() {
 cat << 'EOF'
-
-/* ===== Nautilus overrides ===== */
+/* ===== Nautilus overrides:begin ===== */
 .nautilus-window {
     background-color: @view_bg_color;
     color: @view_fg_color;
@@ -81,19 +78,25 @@ cat << 'EOF'
     color: @accent_fg_color;
     border-radius: 8px;
 }
+/* ===== Nautilus overrides:end ===== */
 EOF
 }
 
-nautilus_css >> "$gtk3_file"
-nautilus_css >> "$gtk4_file"
+# Remove any previous block (marker-delimited), then append a fresh copy.
+# This keeps the stylesheet clean no matter how many times the hook runs.
+apply_css() {
+    local gtk_file="$1"
+    mkdir -p "$(dirname "$gtk_file")"
+    if [[ -f "$gtk_file" ]]; then
+        sed -i '/^\/\* ===== Nautilus overrides:begin ===== \*\/$/,/^\/\* ===== Nautilus overrides:end ===== \*\/$/d' "$gtk_file"
+    fi
+    nautilus_css >> "$gtk_file"
+}
+
+apply_css "$gtk3_file"
+apply_css "$gtk4_file"
 
 if flatpak list --app 2>/dev/null | grep -q "org.gnome.Nautilus"; then
-    mkdir -p "$flatpak_nautilus_dir/gtk-3.0" "$flatpak_nautilus_dir/gtk-4.0"
-    nautilus_css >> "$flatpak_nautilus_dir/gtk-3.0/gtk.css"
-    nautilus_css >> "$flatpak_nautilus_dir/gtk-4.0/gtk.css"
-    success "Flatpak Nautilus detected, CSS applied to its config dir"
+    apply_css "$flatpak_nautilus_dir/gtk-3.0/gtk.css"
+    apply_css "$flatpak_nautilus_dir/gtk-4.0/gtk.css"
 fi
-
-require_restart "nautilus"
-success "Nautilus theme updated!"
-exit 0
