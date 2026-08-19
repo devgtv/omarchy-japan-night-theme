@@ -86,3 +86,12 @@ Wallpapers sourced from Pinterest — see the [original pin
 1](https://br.pinterest.com/pin/1050464681823407082/) and [original pin
 2](https://br.pinterest.com/pin/698198748471118783/). Moonlit city street art
 credited to [IAMAG on Twitter](https://twitter.com/iamagco).
+
+## Contributors
+
+- **Michael91** — helper and reviewer: identified why the Nautilus hook did
+  not run under the plain hook runner and contributed the marker-based,
+  idempotent CSS approach.
+- **im001** — thanks a lot for the feedback and support!
+
+Thank you both for helping make this theme better!
