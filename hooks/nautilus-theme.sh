@@ -12,6 +12,10 @@ fi
 gtk3_file="$HOME/.config/gtk-3.0/gtk.css"
 gtk4_file="$HOME/.config/gtk-4.0/gtk.css"
 
+# Flatpak Nautilus is sandboxed and reads its CSS from its own config dir
+# instead of ~/.config/gtk-4.0/.
+flatpak_nautilus_dir="$HOME/.var/app/org.gnome.Nautilus/config"
+
 nautilus_css() {
 cat << 'EOF'
 
@@ -82,6 +86,13 @@ EOF
 
 nautilus_css >> "$gtk3_file"
 nautilus_css >> "$gtk4_file"
+
+if flatpak list --app 2>/dev/null | grep -q "org.gnome.Nautilus"; then
+    mkdir -p "$flatpak_nautilus_dir/gtk-3.0" "$flatpak_nautilus_dir/gtk-4.0"
+    nautilus_css >> "$flatpak_nautilus_dir/gtk-3.0/gtk.css"
+    nautilus_css >> "$flatpak_nautilus_dir/gtk-4.0/gtk.css"
+    success "Flatpak Nautilus detected, CSS applied to its config dir"
+fi
 
 require_restart "nautilus"
 success "Nautilus theme updated!"
