@@ -5,6 +5,10 @@ cityscapes with a deep ocean-blue palette extracted from the wallpapers.
 
 ![Street at night preview](backgrounds/japan-night-street-dim.jpg)
 ![Moonlit city preview](backgrounds/japan-night-moon-dim.jpg)
+![Night scene 1](backgrounds/japan-night-1.jpg)
+![Night scene 2](backgrounds/japan-night-2.jpg)
+![Night scene 3](backgrounds/japan-night-3.jpg)
+![Night scene 4](backgrounds/japan-night-4.jpg)
 
 ## Wallpapers
 
