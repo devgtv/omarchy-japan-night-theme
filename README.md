@@ -3,7 +3,8 @@
 A dark anime night theme for [Omarchy](https://omarchy.org/) — Japanese night
 cityscapes with a deep ocean-blue palette extracted from the wallpapers.
 
-![Theme preview](backgrounds/japan-night-street.jpg)
+![Street at night preview](backgrounds/japan-night-street.jpg)
+![Moonlit city preview](backgrounds/japan-night-moon.jpg)
 
 ## Wallpapers
 
