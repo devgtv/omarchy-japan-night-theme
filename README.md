@@ -3,20 +3,18 @@
 A dark anime night theme for [Omarchy](https://omarchy.org/) — Japanese night
 cityscapes with a deep ocean-blue palette extracted from the wallpapers.
 
-![Street at night preview](backgrounds/japan-night-street.jpg)
-![Moonlit city preview](backgrounds/japan-night-moon.jpg)
+![Street at night preview](backgrounds/japan-night-street-dim.jpg)
+![Moonlit city preview](backgrounds/japan-night-moon-dim.jpg)
 
 ## Wallpapers
 
-All wallpapers are 4K (3840x2160). Each scene comes in two variants: the
-original brightness and a slightly dimmed version for a darker night look.
+All wallpapers are dark night scenes, matching the theme's atmosphere.
 
-- **japan-night-street.jpg** — empty city street at night with stars over
-  buildings and trees (original)
-- **japan-night-street-dim.jpg** — same scene, slightly reduced brightness
-- **japan-night-moon.jpg** — anime city street at night with the moon
-  (original)
-- **japan-night-moon-dim.jpg** — same scene, slightly reduced brightness
+- **japan-night-street-dim.jpg** — empty city street at night with stars over
+  buildings and trees
+- **japan-night-moon-dim.jpg** — anime city street at night with the moon
+- **japan-night-1.jpg** to **japan-night-4.jpg** — additional night scenes
+  (AI-generated)
 
 ## Installation
 
