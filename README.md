@@ -3,15 +3,19 @@
 A dark anime night theme for [Omarchy](https://omarchy.org/) — Japanese night
 cityscapes with a deep ocean-blue palette extracted from the wallpapers.
 
-![Theme preview placeholder](backgrounds/8a74649785db30a59636dd01602f1d60.jpg)
+![Theme preview](backgrounds/japan-night-street.jpg)
 
 ## Wallpapers
 
-- **8a74649785db30a59636dd01602f1d60.jpg** — empty city street at night with
-  stars over buildings and trees (original)
-- **8bf2187d7280c782990e65cebea806b0.jpg** — anime city street at night with
-  the moon (original)
-- **p1.jpg** / **p2.jpg** — same scenes with slightly reduced brightness
+All wallpapers are 4K (3840x2160). Each scene comes in two variants: the
+original brightness and a slightly dimmed version for a darker night look.
+
+- **japan-night-street.jpg** — empty city street at night with stars over
+  buildings and trees (original)
+- **japan-night-street-dim.jpg** — same scene, slightly reduced brightness
+- **japan-night-moon.jpg** — anime city street at night with the moon
+  (original)
+- **japan-night-moon-dim.jpg** — same scene, slightly reduced brightness
 
 ## Installation
 
@@ -43,7 +47,27 @@ Running `omarchy theme set japan-night` generates color configurations for:
   Night palette
 - **btop, helix, vscode, obsidian, tmux**
 - **Omarchy shell** — bar, widgets, notifications
-- **GTK / Qt** apps, Firefox, Zen, Discord, Spotify, Steam and more
+- **GTK / Qt** apps (including Nautilus), Firefox, Zen, Discord, Spotify,
+  Steam and more
+
+## Nautilus (optional)
+
+Nautilus follows the dark GTK theme automatically, but the repo ships a hook
+that adds explicit Nautilus styling so folders and files stay clearly visible
+on the dark background. Install it with:
+
+```bash
+omarchy hook install theme-set hooks/nautilus-theme.sh
+```
+
+Then re-apply the theme to generate the CSS and restart Nautilus:
+
+```bash
+omarchy theme set japan-night
+```
+
+The hook appends Nautilus overrides to `~/.config/gtk-3.0/gtk.css` and
+`~/.config/gtk-4.0/gtk.css` on every theme change.
 
 ## Customization
 
