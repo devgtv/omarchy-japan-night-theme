@@ -3,6 +3,43 @@
 A dark anime night theme for [Omarchy](https://omarchy.org/) — Japanese night
 cityscapes with a deep ocean-blue palette extracted from the wallpapers.
 
+## Night Journeys
+
+Three companion themes, each with its own terminal and desktop palette. Click a
+preview to open the **3840 × 2160** wallpaper.
+
+| Kyoto Andon | Kamakura Shiosai | Hirosaki Yukiakari |
+| :--- | :--- | :--- |
+| [![Amber lanterns on a rain-polished Kyoto lane](.github/previews/kyoto-andon.jpg)](.variants/japan-night-kyoto-andon/backgrounds/kyoto-andon.jpg) | [![A jade-green train follows the coast near Enoshima](.github/previews/kamakura-shiosai.jpg)](.variants/japan-night-kamakura-shiosai/backgrounds/kamakura-shiosai.jpg) | [![Hirosaki Castle and a vermilion bridge reflected in an icy moat](.github/previews/hirosaki-yukiakari.jpg)](.variants/japan-night-hirosaki-yukiakari/backgrounds/hirosaki-yukiakari.jpg) |
+| Lantern amber, plum shadows and wet stone. | Sea-glass jade, midnight petrol and warm carriage windows. | Snow blue, periwinkle and faded lacquer red. |
+
+The top eighth of each illustration is quiet sky in the bar's background
+colour. Lamps, cables and snow stay below it, so even a transparent top Waybar
+leaves the scene intact. The Omarchy bar uses the same palette; `waybar.css`
+provides the foreground and background for Waybar setups.
+
+**Install the three variants** from an existing [Japan Night installation](#installation):
+
+```bash
+cd ~/.config/omarchy/themes/japan-night
+git pull --ff-only
+cp -R .variants/japan-night-* ~/.config/omarchy/themes/
+```
+
+If you already have a separate checkout of this repository, the `cp` command
+also works from its root.
+
+They now appear separately in the theme picker. To apply one directly, run
+one of these commands:
+
+```bash
+omarchy theme set japan-night-kyoto-andon
+omarchy theme set japan-night-kamakura-shiosai
+omarchy theme set japan-night-hirosaki-yukiakari
+```
+
+## Original Japan Night
+
 ![Street at night preview](backgrounds/japan-night-street-dim.jpg)
 ![Moonlit city preview](backgrounds/japan-night-moon-dim.jpg)
 ![Night scene 1](backgrounds/japan-night-1.jpg)
@@ -84,7 +121,10 @@ omarchy theme bg next
 
 ## Credits
 
-Wallpapers sourced from Pinterest — see the [original pin
+The three Night Journeys illustrations were drawn for this collection. Their
+[editable SVG masters](.artwork/) can be rendered at any resolution.
+
+Original Japan Night wallpapers sourced from Pinterest — see the [original pin
 1](https://br.pinterest.com/pin/1050464681823407082/) and [original pin
 2](https://br.pinterest.com/pin/698198748471118783/). Moonlit city street art
 credited to [IAMAG on Twitter](https://twitter.com/iamagco).
